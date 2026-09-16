@@ -1,24 +1,37 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#define      D       2.54
-#define      P       2.32
+#define D 2.54
+#define P 2.32
 #include <locale.h>
+#include <math.h>
+
+int task_1();
+int task_2();
+int task_3();
+int homework();
+
+int main() {
+	task_1();
+	task_2()
+	task_3();
+	homework();
+	return 0;
+}  
+
 int task_1() {
 	setlocale(LC_CTYPE, "RUS");
 	int num, num1;
-	puts("введите первое число:");
+	puts("РІРІРµРґРёС‚Рµ РїРµСЂРІРѕРµ С‡РёСЃР»Рѕ:");
 	scanf("%d", &num);
-	printf("введено число %d\n", num);
-	system("pause");
-	puts("введите второе число:");
+	printf("РІРІРµРґРµРЅРѕ С‡РёСЃР»Рѕ %d\n", num);
+	puts("РІРІРµРґРёС‚Рµ РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ:");
 	scanf("%d", &num1);
-	printf("введено число %d\n", num1);
-	system("pause");
+	printf("РІРІРµРґРµРЅРѕ С‡РёСЃР»Рѕ %d\n", num1);
 	printf("%d + %d = %d\n", num, num1, num + num1);
-	printf("%d - %d = %d\n", num, num1, num - num1);
+	printf("%d - %d = %d\n", num, num1, num + num1);
 	printf("%d * %d = %d\n", num, num1, num * num1);
-	printf("%d / %d = %.2f\n", num, num1, (float)num / num1);
-	printf("%d %% %d = %d\n", num, num1, num1 % num);
+	printf("%d / %d = %.4f\n", num, num1, (float)num / num1);
+	printf("%d %% %d = %d\n", num1, num, num1 % num);
 	return 0;
 }
 
@@ -26,32 +39,38 @@ int task_2() {
 	setlocale(LC_CTYPE, "RUS");
 	int dym;
 	float res, res1;
-	puts("введите значение для расчёта:");
+	puts("РІРІРµРґРёС‚Рµ С‡РёСЃР»Рѕ РґР»СЏ СЂР°СЃСЃС‡С‘С‚Р°:");
 	scanf("%d", &dym);
 	res = D * dym;
 	res1 = P * dym;
-	printf("%d английских дюймов – это %.1f см, %d испанских дюймов – это %.1f см", dym, res, dym, res1);
+	printf("%d Р°РЅРіР»РёР№СЃРєРёС… РґСЋР№РјРѕРІ вЂ“ СЌС‚Рѕ %.1f СЃРј\n %d РёСЃРїР°РЅСЃРєРёС… РґСЋР№РјРѕРІ - СЌС‚Рѕ %.1f СЃРј\n", dym, res, dym, res1);
 	return 0;
 }
 
 int task_3() {
 	setlocale(LC_CTYPE, "RUS");
-	float a = 3, b = 5;
-	// printf("введите число a:\n");
-	// scanf("%f", &a);
-	// printf("введите число b:\n");
-	// scanf("%f", &b);
-	printf("---------------------\n");
-	printf("|%17s||%17s||%-17s|\n", "a*b", "a+b", "a-b");
-	printf("---------------------\n");
-	printf("|%10.0f*%-6.0f||%10.0f*%-6.0f||%10.0f*%-6.0f|\n", a, b, a, b, a, b);
-	printf("---------------------\n");
+	float a, b;
+	scanf("%f", &a);
+	scanf("%f", &b);
+	printf("---------------------------------------------------------\n");
+	printf("|%17s||%17s||%17s|\n", "a*b", "a+b", "a-b");
+	printf("---------------------------------------------------------\n");
+	printf("|%10.0f*%-6.0f||%10.0f+%-6.0f||%10.0f-%-6.0f|\n", a, b, a, b, a, b);
+	printf("---------------------------------------------------------\n");
+	printf("|%17.0f||%17.0f||%17.0f|\n", a * b, a + b, a - b);
+	printf("---------------------------------------------------------\n");
+	return 0;
+}
+// 18
+int homework() {
+	setlocale(LC_CTYPE, "RUS");
+	int a, b;
+	printf("РІРІРµРґРёС‚Рµ РґР»РёРЅСѓ РїРµСЂРІРѕРіРѕ РєР°С‚РµС‚Р° РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРѕРіРѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°:\n");
+	scanf("%d", &a);
+	printf("РІРІРµРґРёС‚Рµ РґР»РёРЅСѓ РІС‚РѕСЂРѕРіРѕ РєР°С‚РµС‚Р° РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРѕРіРѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°:\n");
+	scanf("%d", &b);
+	int c = sqrt(a * a + b * b);
+	printf("РґР»РёРЅР° РіРёРїРѕС‚РµРЅСѓР·С‹ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРѕРіРѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° = %d\n", c);
 	return 0;
 }
 
-int main() {
-	// task_1();
-	// task_2();
-	task_3();
-	return 0;
-}
